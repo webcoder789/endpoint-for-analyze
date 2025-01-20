@@ -5,7 +5,10 @@ const app = express();
 
 app.use(express.json());
 
-// 通常のGETリクエスト
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/post", (req, res) => {
   //   const reqJson = JSON.stringify(decycle(req), null, 2);
   const reqJson = JSON.stringify(decycle(req));
