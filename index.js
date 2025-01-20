@@ -17,7 +17,7 @@ app.post("/post", (req, res) => {
     "----------------------------------------------------------------"
   );
 
-  res.json({ message: "success" });
+  res.send(reqJson);
 });
 
 const port = parseInt(process.env.PORT ?? 3000);
