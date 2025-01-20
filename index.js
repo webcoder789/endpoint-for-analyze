@@ -9,15 +9,19 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/post", (req, res) => {
+app.post("/post", (request, response) => {
   //   const reqJson = JSON.stringify(decycle(req), null, 2);
-  const reqJson = JSON.stringify(decycle(req));
+  const reqJson = JSON.stringify(decycle(request));
   console.log(reqJson);
   console.log(
     "----------------------------------------------------------------"
   );
 
-  res.send(reqJson);
+  response.send(reqJson);
+});
+
+app.post("/post-version", (request, response) => {
+  response.send(request.httpVersion);
 });
 
 const port = parseInt(process.env.PORT ?? 3000);
