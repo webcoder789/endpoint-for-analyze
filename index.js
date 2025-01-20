@@ -20,8 +20,8 @@ app.post("/post", (req, res) => {
   res.json({ message: "success" });
 });
 
-const port = 3000;
+const port = parseInt(process.env.PORT ?? 3000);
 // サーバーを起動
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at`);
 });
